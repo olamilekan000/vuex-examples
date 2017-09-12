@@ -3,6 +3,6 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-	state: {}
-})
+import counter from './counter'
+
+export default new Vuex.Store(Object.assign({}, counter))

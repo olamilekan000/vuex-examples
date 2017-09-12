@@ -7,7 +7,7 @@
     <ul>
       <li>
         <div>
-          <router-link to="/">Change Route</router-link>
+          <router-link to="/counter">Counter</router-link>
         </div>
       </li>
     </ul>
