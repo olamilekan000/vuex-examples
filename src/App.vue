@@ -2,23 +2,20 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
-    <counter></counter>
   </div>
 </template>
 
 <script>
-import counter from '../components/counter.vue'
-
 export default {
   name: 'app',
 
   components: {
-    counter
+    // Add Components Here
   },
 
   data() {
     return {
-      msg: 'Counter'
+      msg: 'Vuex Examples'
     }
   }
 }
