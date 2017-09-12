@@ -1,26 +1,24 @@
 <template>
   <div id="app">
-    <router-link to="/"> <img src="./assets/logo.png"> </router-link>
-    <h1>
-      <router-link to="/">{{ msg }}</router-link>
-    </h1>
-    <ul>
-      <li>
-        <div>
-          <router-link to="/counter">Counter</router-link>
-        </div>
-      </li>
-    </ul>
-    <router-view></router-view>
+    <img src="./assets/logo.png">
+    <h1>{{ msg }}</h1>
+    <counter></counter>
   </div>
 </template>
 
 <script>
+import counter from '../components/counter.vue'
+
 export default {
   name: 'app',
+
+  components: {
+    counter
+  },
+
   data() {
     return {
-      msg: 'Vuex Examples'
+      msg: 'Counter'
     }
   }
 }
