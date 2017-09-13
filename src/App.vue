@@ -2,18 +2,15 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
-    <ShoppingCart />
   </div>
 </template>
 
 <script>
-import ShoppingCart from '../components/shopping-cart.vue'
-
 export default {
   name: 'app',
 
   components: {
-    ShoppingCart
+    //
   },
 
   data() {
