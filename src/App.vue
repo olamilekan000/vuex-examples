@@ -1,24 +1,30 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <ShoppingCart />
+    <router-link to="/"><img src="./assets/logo.png"></router-link>
+    <h1>
+      {{ msg }}
+    </h1>
+    <router-link to="/products"> products </router-link>
+    <router-link to="/cart"> cart </router-link>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import ShoppingCart from '../components/shopping-cart.vue'
+import products from '../components/products.vue'
+import cart from '../components/cart.vue'
 
 export default {
   name: 'app',
 
   components: {
-    ShoppingCart
+    products,
+    cart
   },
 
   data() {
     return {
-      msg: 'Vuex Examples'
+      msg: 'Shopping Cart'
     }
   }
 }
@@ -26,6 +32,7 @@ export default {
 
 <style>
   #app {
+    transition: all 0.5s;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -38,21 +45,14 @@ export default {
     color: #42b983;
   }
 
-  h1 {
+  h1,
+  h2 {
     font-weight: normal;
   }
 
-  h1>a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  li>div {
-    margin-top: 10px;
+  div>a {
+    display: block;
+    font-size: 20px;
+    margin: 10px;
   }
 </style>
