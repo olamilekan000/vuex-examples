@@ -2,20 +2,23 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
+    <todo></todo>
   </div>
 </template>
 
 <script>
+import todo from '../components/todo.vue'
+
 export default {
   name: 'app',
 
   components: {
-    // Add Components Here
+    todo
   },
 
   data() {
     return {
-      msg: 'Vuex Examples'
+      msg: 'Todo'
     }
   }
 }
