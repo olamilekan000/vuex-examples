@@ -6,8 +6,8 @@
 - Projects
 - Getting Started
  - With Vue-CLI
- - By Cloning this Repo
-- Running the App
+ - By cloning this repo
+- Running each project
 
 ### Projects
 - [counter](https://github.com/ooade/learn-vuex/tree/counter)
@@ -25,11 +25,11 @@ vue init webpack-simple counter
 ```
 > make sure you have vue-cli installed on your computer before running the command.
 
-#### By Cloning this Repo
+#### By cloning this repo
 You could as well, clone this repository and use it that way :sweat_smile:
 I already added the template for creating a store, installing Vuex and injecting it to our app.
 
-### Running the App
+### Running each project
 ``` bash
 # install dependencies
 npm install
@@ -40,6 +40,8 @@ npm run dev
 # build for production with minification
 npm run build
 ```
+> Any additional details will be stated on the project's branch. 
+> Happy Coding!
 
 ## License
 MIT
