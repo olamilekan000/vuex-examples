@@ -1,13 +1,20 @@
 <template>
 	<div>
 		<form @submit.prevent="addTodo">
-			<input type="text" placeholder="What must be done?" v-model="text" />
+			<input
+			  type="text"
+			  placeholder="What must be done?"
+			  v-model="text"
+			/>
 			<button> Add Todo </button>
 		</form>
 		<ul>
-			<li v-for="todo in todos">{{ todo.text }}
-				<button @click="removeTodo(todo.id)">x</button>
-			</li>
+			<li
+			  v-for="(todo, index) in todos"
+			  :key="index"
+			>{{ todo.text }}
+				<button @click="removeTodo(todo)">x</button>
+				</li>
 		</ul>
 	</div>
 </template>

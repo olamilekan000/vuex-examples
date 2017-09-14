@@ -9,16 +9,10 @@ export default new Vuex.Store({
 	},
 	mutations: {
 		addTodo(state, text) {
-			state.todos.push({
-				id: Math.random()
-					.toString(26)
-					.slice(2),
-				text
-			})
+			state.todos.push({ text })
 		},
-		removeTodo(state, id) {
-			const todoIndex = state.todos.findIndex(item => item.id === id)
-			state.todos.splice(todoIndex, 1)
+		removeTodo(state, todo) {
+			state.todos.splice(state.todos.indexOf(todo), 1)
 		}
 	}
 })
