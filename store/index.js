@@ -9,6 +9,8 @@ export default new Vuex.Store({
 	},
 	mutations: {
 		add(state, payload) {
+			// If we get a payload, add it to count
+			// Else, just add one to count
 			payload ? (state.count += payload) : state.count++
 		},
 		subtract(state, payload) {
