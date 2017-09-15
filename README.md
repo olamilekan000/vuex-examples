@@ -3,11 +3,11 @@
 > This project aims to touch various aspects of Vuex to enable write with Vuex on the fly without any hassle.
 
 ## Contents
-- Projects
-- Getting Started
- - With Vue-CLI
- - By cloning this repo
-- Running each project
+- [Projects](#projects)
+- [Getting Started](#getting-started)
+  - [With Vue-CLI](#with-vue-cli)
+  - [By cloning this repo](#by-cloning-this-repo)
+- [Running each project](#running-each-project)
 
 ### Projects
 - [counter](https://github.com/ooade/learn-vuex/tree/counter)
