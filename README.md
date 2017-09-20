@@ -1,12 +1,10 @@
-# Learn Vuex
+# Vuex Examples
 
-> This project aims to touch various aspects of Vuex to enable write with Vuex on the fly without any hassle.
+> This project aims to touch various aspects of Vuex.
 
 ## Contents
 - [Projects](#projects)
 - [Getting Started](#getting-started)
-  - [With Vue-CLI](#with-vue-cli)
-  - [By cloning this repo](#by-cloning-this-repo)
 - [Running each project](#running-each-project)
 
 ### Projects
@@ -17,17 +15,8 @@
 - Make request
 
 ### Getting Started
-
-#### With Vue-CLI
-Each project is created using [vue-cli](https://github.com/vuejs/vue-cli)'s [webpack-simple template](https://github.com/vuejs-templates/webpack-simple) so you could just pick the first project on the list and run
-```
-vue init webpack-simple counter
-```
-> make sure you have vue-cli installed on your computer before running the command.
-
-#### By cloning this repo
-You could as well, clone this repository and use it that way :sweat_smile:
-I already added the template for creating a store, installing Vuex and injecting it to our app.
+- Clone the Repo
+- `git checkout [project]`
 
 ### Running each project
 ``` bash
