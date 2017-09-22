@@ -2,23 +2,20 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app',
+  export default {
+    name: 'app',
 
-  components: {
-    //
-  },
-
-  data() {
-    return {
-      msg: 'Vuex Examples'
+    data() {
+      return {
+        msg: 'Vuex Examples'
+      }
     }
   }
-}
 </script>
 
 <style>
