@@ -1,3 +1,5 @@
-# Shopping Cart
+# Image Gallery
 
-> A Shopping Cart implementation with Vuex
+> An Image Gallery implementation with Vuex
+
+> [Server](https://github.com/ooade/vuex-examples-server)

@@ -1,33 +1,32 @@
 <template>
   <div id="app">
-    <router-link to="/"><img src="./assets/logo.png"></router-link>
+    <img src="./assets/logo.png">
     <h1>
       {{ msg }}
     </h1>
-    <router-link to="/products"> products </router-link>
-    <router-link to="/cart"> cart </router-link>
-    <router-view></router-view>
+    <image-form></image-form>
+    <images></images>
   </div>
 </template>
 
 <script>
-import products from '../components/products.vue'
-import cart from '../components/cart.vue'
+  import ImageForm from '../components/image-form.vue'
+  import Images from '../components/images.vue'
 
-export default {
-  name: 'app',
+  export default {
+    name: 'app',
 
-  components: {
-    products,
-    cart
-  },
+    components: {
+      ImageForm,
+      Images
+    },
 
-  data() {
-    return {
-      msg: 'Shopping Cart'
+    data() {
+      return {
+        msg: 'Image Gallery'
+      }
     }
   }
-}
 </script>
 
 <style>
