@@ -3,64 +3,22 @@
 		<div class="error">
 			{{ authError }}
 		</div>
-
-		<form class="signin-form"
-		      @submit.prevent="signin">
-			<input type="email"
-			       placeholder="email"
-			       v-model="email" />
-			<input type="password"
-			       placeholder="password"
-			       v-model="password" />
-			<button>Signin</button>
-		</form>
-
-		<form class="signup-form"
-		      @submit.prevent="signup">
-			<input type="email"
-			       placeholder="email"
-			       v-model="email" />
-			<input type="password"
-			       placeholder="password"
-			       v-model="password" />
-			<button>Signup</button>
-		</form>
+		<signin />
+		<signup />
 	</div>
 </template>
 
 <script>
 	import { mapState } from 'vuex'
+	import signin from './signin.vue'
+	import signup from './signup.vue'
 
 	export default {
-		data() {
-			return {
-				email: '',
-				password: ''
-			}
+		components: {
+			signin,
+			signup
 		},
-
 		computed: mapState(['authError', 'authenticated']),
-
-		methods: {
-			signin() {
-				this.$store.dispatch({
-					type: 'signin',
-					email: this.email,
-					password: this.password
-				})
-				this.email = ''
-				this.password = ''
-			},
-			signup() {
-				this.$store.dispatch({
-					type: 'signup',
-					email: this.email,
-					password: this.password
-				})
-				this.email = ''
-				this.password = ''
-			}
-		},
 		watch: {
 			authenticated() {
 				this.$router.push('/protected')
