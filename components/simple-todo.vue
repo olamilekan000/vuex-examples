@@ -1,44 +1,30 @@
 <template>
 	<div>
-		<form @submit.prevent="addTodo">
-			<input
-			  type="text"
-			  placeholder="What must be done?"
-			  v-model="text"
-			/>
+		<form @submit.prevent="addTodo(text); text = ''">
+			<input type="text"
+			       placeholder="What must be done?"
+			       v-model="text" />
 			<button> Add Todo </button>
 		</form>
 		<ul>
-			<li
-			  v-for="(todo, index) in todos"
-			  :key="index"
-			>{{ todo.text }}
+			<li v-for="todo in todos"
+			    :key="todo.id">{{ todo.text }}
 				<button @click="removeTodo(todo)">x</button>
-				</li>
+			</li>
 		</ul>
 	</div>
 </template>
 
 <script>
-import store from '../store';
+	import { mapState, mapActions } from 'vuex'
 
-export default {
-	data() {
-		return {
-			text: ''
-		}
-	},
-
-	computed: { todos: () => store.state.todos },
-
-	methods: {
-		addTodo() {
-			store.commit('addTodo', this.text)
-			this.text = ''
+	export default {
+		data() {
+			return {
+				text: ''
+			}
 		},
-		removeTodo(id) {
-			store.commit('removeTodo', id)
-		}
+		computed: mapState(['todos']),
+		methods: mapActions(['addTodo', 'removeTodo'])
 	}
-}
 </script>

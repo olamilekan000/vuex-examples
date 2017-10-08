@@ -1,18 +1,28 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import firestore from './firestore';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
 		todos: []
 	},
 	mutations: {
-		addTodo(state, text) {
-			state.todos.push({ text })
+		watchTodos(state, todos) {
+			state.todos = todos;
 		},
 		removeTodo(state, todo) {
-			state.todos.splice(state.todos.indexOf(todo), 1)
+			state.todos.splice(state.todos.indexOf(todo), 1);
+		}
+	},
+	actions: {
+		addTodo({ commit }, text) {
+			firestore.addTodo(text);
+		},
+		removeTodo({ commit }, todo) {
+			firestore.removeTodo(todo.id);
+			commit('removeTodo', todo);
 		}
 	}
-})
+});
