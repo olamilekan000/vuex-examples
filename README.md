@@ -1,3 +1,3 @@
 # Simple Todo
 
-> A Simple Todo implementation with Vuex
+> A Simple FireStore implementation with Vuex
