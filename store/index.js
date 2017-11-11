@@ -29,22 +29,25 @@ export default new Vuex.Store({
 				data: payload
 			})
 		},
-		fetchImages(state) {
-			state.loading = true
-			axios.get(`${URL}/api/images`).then(res => {
-				state.loading = false
-				state.images = res.data
-			})
+		toggleLoading(state) {
+			state.loading = !state.loading
 		}
 	},
 	actions: {
+		fetchImages({ state, commit }) {
+			commit('toggleLoading')
+			axios.get(`${URL}/api/images`).then(res => {
+				commit('toggleLoading')
+				state.images = res.data
+			})
+		},
 		uploadImages({ state, commit }, e) {
-			state.loading = true
+			commit('toggleLoading')
 			state.temp_images.map(image => {
 				const data = new FormData()
 				data.append('file', image)
 				axios.post(`${URL}/api/images`, data).then(res => {
-					state.loading = false
+					commit('toggleLoading')
 					e.target.reset()
 					state.temp_images = []
 					commit('addImage', res.data)

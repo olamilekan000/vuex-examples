@@ -10,14 +10,14 @@
 </template>
 
 <script>
-	import { mapState, mapMutations } from 'vuex';
+	import { mapState, mapMutations, mapActions } from 'vuex'
 
 	export default {
 		mounted() {
-			this.fetchImages();
+			this.fetchImages()
 		},
 		computed: mapState(['images']),
-		methods: mapMutations(['fetchImages', 'removeImage'])
+		methods: { ...mapActions(['fetchImages']), ...mapMutations(['removeImage']) }
 	}
 </script>
 
