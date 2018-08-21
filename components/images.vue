@@ -2,8 +2,7 @@
 	<ul>
 		<li v-for="image in images"
 		    :key="image._id">
-			<img :src="image.image_url"
-			     class="image" />
+			<vue-image :src="image.image_url"/>
 			<button @click="removeImage(image)">Delete</button>
 		</li>
 	</ul>
@@ -37,13 +36,6 @@
 		margin: 10px;
 	}
 
-	.image {
-		height: 300px;
-		display: flex;
-		flex: 1;
-		justify-content: space-between;
-	}
-
 	button {
 		border: none;
 		cursor: pointer;
@@ -58,6 +50,16 @@
 
 	li button:hover {
 		background-color: red;
+	}
+
+	.pimg {
+		width: 250px;
+		height: auto;
+	}
+
+	.pimg__placeholder {
+		filter: blur(2vw);
+		transform: scale(1.05);
 	}
 </style>
 
